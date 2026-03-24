@@ -1,0 +1,12 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+df = pd.read_csv("data/latency_data.csv")
+
+plt.plot(df["g_gap"], df["latency_young"], label="Young")
+plt.plot(df["g_gap"], df["latency_old"], label="Old")
+
+plt.xlabel("Gap Junction Conductance (g_gap)")
+plt.ylabel("Latency (ms)")
+plt.legend()
+plt.show()
